@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <html lang="en" xml:lang="en" xmlns= "http://www.w3.org/1999/xhtml">
+    <meta name="google" content="notranslate">
+    <meta http-equiv="Content-Language" content="en">
+    <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width">
+	  <title>Smacronios | Player Searcher</title>
+	  <link rel="shortcut icon" type="image/jpg" href="images/wtf.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&display=swap" rel="stylesheet">
+	  <link href="./PlayerSearcherStyle.css" rel="stylesheet" type="text/css" />
+    <script async src="" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="Header">
+      <div id="Logo">
+        <a href="/"><img src="https://minotar.net/helm/macronio/100.png" width="58px" height="58px"></a>
+      </div>
+      <div id="Links">
+        <ul>
+          <input type="text" id="Input" name="Input" autocomplete="on" placeholder="Player Username">
+        </ul>
+      </div>
+    </div>
+    <div id="Main" class="grid-container">
+      <div id="NameAndSkin" class="grid-item item1">
+        <p id="activeprefix"></p>
+        <p id="rank"></p>
+        <a href="" target="_blank" id="skinLink">
+          <image src="" id="skin"/>
+        </a>
+      </div>
+      <div id="Guild" class="grid-item item2">
+        <script type="text/javascript" src="PlayerSearcher.js"></script>
+        <p>
+          <span id="guildInfo" style="color:#FFFFFF">Prefix Icons & Colors</span>
+          <br>
+          <span style="color:#999999">Suck it up kid ;)</span>
+        </p>
+      </div>
+      <div id="DivisionTitles" class="grid-item item3">
+        <script src="DivisionTitles.js"></script>
+        <p> 
+          <span id="OverallTitle"></span><br>
+          <span id="GamemodeTitles"></span><br>
+        </p>
+      </div>
+      <div id="PreviousNames" class="grid-item item7">
+        <p>
+          <span id="previousNames"></span>
+        </p>
+      </div>
+      <div id="SeasonTitles" class="grid-item item4">
+        <p id="specialTitles"></p>
+      </div>
+      <div id="OverallStats" class="grid-item item5">
+        <p>
+          <span id="trophies"></span><br>
+          <span id="coins"></span><br>
+          <br>
+          <span id="currentWinstreak"></span><br>
+          <span id="bestWinstreak"></span><br>
+          <br>
+          <span id="wins"></span><br>
+          <span id="losses"></span><br>
+          <span id="wlr"></span><br>
+          <br>
+          <span id="kills"></span><br>
+          <span id="deaths"></span><br>
+          <span id="kdr"></span><br>
+          <br>
+          <span id="arrowsShot"></span><br>
+          <span id="arrowsHit"></span><br>
+          <span id="ahmr"></span><br>
+          <br>
+          <span id="meleeSwings"></span><br>
+          <span id="meleeHits"></span><br>
+          <span id="mhmr"></span><br>
+          <br>
+          <span id="ap"></span><br>
+          <span id="quests"></span><br>
+        </p>
+      </div>
+      <div id="GamemodeStats" class="grid-item item6">
+        <table style="width:100%" style="color:#FFFFFF">
+          <tr>
+            <th><span style="color:#FFFFFF">Gamemode</span></th>
+            <th><span style="color:#FFFFFF">Wins</span></th>
+            <th><span style="color:#FFFFFF">Losses</span></th>
+            <th><span style="color:#FFFFFF">W/L Ratio</span></th>
+            <th><span style="color:#FFFFFF">Kills</span></th>
+            <th><span style="color:#FFFFFF">Deaths</span></th>
+            <th><span style="color:#FFFFFF">K/D Ratio</span></th>
+            <th><span style="color:#FFFFFF">Current WS</span></th>
+            <th><span style="color:#FFFFFF">Best WS</span></th>
+            <th><span style="color:#FFFFFF">Best Daily WS</span></th>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">UHC 1v1</span></th>
+            <td><span id="UHC1W"></span></td>
+            <td><span id="UHC1L"></span></td>
+            <td><span id="UHC1WLR"></span></td>
+            <td><span id="UHC1K"></span></td>
+            <td><span id="UHC1D"></span></td>
+            <td><span id="UHC1KDR"></span></td>
+            <td><span id="UHC1CWS"></span></td>
+            <td><span id="UHC1BWS"></span></td>
+            <td><span id="UHC1DWS"></span></td>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">UHC 2v2</span></th>
+            <td><span id="UHC2W"></span></td>
+            <td><span id="UHC2L"></span></td>
+            <td><span id="UHC2WLR"></span></td>
+            <td><span id="UHC2K"></span></td>
+            <td><span id="UHC2D"></span></td>
+            <td><span id="UHC2KDR"></span></td>
+            <td><span id="UHC2CWS"></span></td>
+            <td><span id="UHC2BWS"></span></td>
+            <td><span id="UHC2DWS"></span></td>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">UHC 4v4</span></th>
+            <td><span id="UHC4W"></span></td>
+            <td><span id="UHC4L"></span></td>
+            <td><span id="UHC4WLR"></span></td>
+            <td><span id="UHC4K"></span></td>
+            <td><span id="UHC4D"></span></td>
+            <td><span id="UHC4KDR"></span></td>
+            <td><span id="UHC4CWS"></span></td>
+            <td><span id="UHC4BWS"></span></td>
+            <td><span id="UHC4DWS"></span></td>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">UHC Deathmatch</span></th>
+            <td><span id="UHCDMW"></span></td>
+            <td><span id="UHCDML"></span></td>
+            <td><span id="UHCDMWLR"></span></td>
+            <td><span id="UHCDMK"></span></td>
+            <td><span id="UHCDMD"></span></td>
+            <td><span id="UHCDMKDR"></span></td>
+            <td><span id="UHCDMCWS"></span></td>
+            <td><span id="UHCDMBWS"></span></td>
+            <td><span id="UHCDMDWS"></span></td>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">Skywars 1v1</span></th>
+            <td><span id="SW1W"></span></td>
+            <td><span id="SW1L"></span></td>
+            <td><span id="SW1WLR"></span></td>
+            <td><span id="SW1K"></span></td>
+            <td><span id="SW1D"></span></td>
+            <td><span id="SW1KDR"></span></td>
+            <td><span id="SW1CWS"></span></td>
+            <td><span id="SW1BWS"></span></td>
+            <td><span id="SW1DWS"></span></td>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">Skywars 2v2</span></th>
+            <td><span id="SW2W"></span></td>
+            <td><span id="SW2L"></span></td>
+            <td><span id="SW2WLR"></span></td>
+            <td><span id="SW2K"></span></td>
+            <td><span id="SW2D"></span></td>
+            <td><span id="SW2KDR"></span></td>
+            <td><span id="SW2CWS"></span></td>
+            <td><span id="SW2BWS"></span></td>
+            <td><span id="SW2DWS"></span></td>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">Megawalls 1v1</span></th>
+            <td><span id="MW1W"></span></td>
+            <td><span id="MW1L"></span></td>
+            <td><span id="MW1WLR"></span></td>
+            <td><span id="MW1K"></span></td>
+            <td><span id="MW1D"></span></td>
+            <td><span id="MW1KDR"></span></td>
+            <td><span id="MW1CWS"></span></td>
+            <td><span id="MW1BWS"></span></td>
+            <td><span id="MW1DWS"></span></td>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">Megawalls 2v2</span></th>
+            <td><span id="MW2W"></span></td>
+            <td><span id="MW2L"></span></td>
+            <td><span id="MW2WLR"></span></td>
+            <td><span id="MW2K"></span></td>
+            <td><span id="MW2D"></span></td>
+            <td><span id="MW2KDR"></span></td>
+            <td><span id="MW2CWS"></span></td>
+            <td><span id="MW2BWS"></span></td>
+            <td><span id="MW2DWS"></span></td>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">Blitz 1v1</span></th>
+            <td><span id="BLITZ1W"></span></td>
+            <td><span id="BLITZ1L"></span></td>
+            <td><span id="BLITZ1WLR"></span></td>
+            <td><span id="BLITZ1K"></span></td>
+            <td><span id="BLITZ1D"></span></td>
+            <td><span id="BLITZ1KDR"></span></td>
+            <td><span id="BLITZ1CWS"></span></td>
+            <td><span id="BLITZ1BWS"></span></td>
+            <td><span id="BLITZ1DWS"></span></td>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">OP 1v1</span></th>
+            <td><span id="OP1W"></span></td>
+            <td><span id="OP1L"></span></td>
+            <td><span id="OP1WLR"></span></td>
+            <td><span id="OP1K"></span></td>
+            <td><span id="OP1D"></span></td>
+            <td><span id="OP1KDR"></span></td>
+            <td><span id="OP1CWS"></span></td>
+            <td><span id="OP1BWS"></span></td>
+            <td><span id="OP1DWS"></span></td>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">OP 2v2</span></th>
+            <td><span id="OP2W"></span></td>
+            <td><span id="OP2L"></span></td>
+            <td><span id="OP2WLR"></span></td>
+            <td><span id="OP2K"></span></td>
+            <td><span id="OP2D"></span></td>
+            <td><span id="OP2KDR"></span></td>
+            <td><span id="OP2CWS"></span></td>
+            <td><span id="OP2BWS"></span></td>
+            <td><span id="OP2DWS"></span></td>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">Classic 1v1</span></th>
+            <td><span id="CLASSIC1W"></span></td>
+            <td><span id="CLASSIC1L"></span></td>
+            <td><span id="CLASSIC1WLR"></span></td>
+            <td><span id="CLASSIC1K"></span></td>
+            <td><span id="CLASSIC1D"></span></td>
+            <td><span id="CLASSIC1KDR"></span></td>
+            <td><span id="CLASSIC1CWS"></span></td>
+            <td><span id="CLASSIC1BWS"></span></td>
+            <td><span id="CLASSIC1DWS"></span></td>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">Bow 1v1</span></th>
+            <td><span id="BOW1W"></span></td>
+            <td><span id="BOW1L"></span></td>
+            <td><span id="BOW1WLR"></span></td>
+            <td><span id="BOW1K"></span></td>
+            <td><span id="BOW1D"></span></td>
+            <td><span id="BOW1KDR"></span></td>
+            <td><span id="BOW1CWS"></span></td>
+            <td><span id="BOW1BWS"></span></td>
+            <td><span id="BOW1DWS"></span></td>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">Nodebuff 1v1</span></th>
+            <td><span id="NDB1W"></span></td>
+            <td><span id="NDB1L"></span></td>
+            <td><span id="NDB1WLR"></span></td>
+            <td><span id="NDB1K"></span></td>
+            <td><span id="NDB1D"></span></td>
+            <td><span id="NDB1KDR"></span></td>
+            <td><span id="NDB1CWS"></span></td>
+            <td><span id="NDB1BWS"></span></td>
+            <td><span id="NDB1DWS"></span></td>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">Combo 1v1</span></th>
+            <td><span id="COMBO1W"></span></td>
+            <td><span id="COMBO1L"></span></td>
+            <td><span id="COMBO1WLR"></span></td>
+            <td><span id="COMBO1K"></span></td>
+            <td><span id="COMBO1D"></span></td>
+            <td><span id="COMBO1KDR"></span></td>
+            <td><span id="COMBO1CWS"></span></td>
+            <td><span id="COMBO1BWS"></span></td>
+            <td><span id="COMBO1DWS"></span></td>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">TNT 1v1</span></th>
+            <td><span id="TNT1W"></span></td>
+            <td><span id="TNT1L"></span></td>
+            <td><span id="TNT1WLR"></span></td>
+            <td><span id="TNT1K"></span></td>
+            <td><span id="TNT1D"></span></td>
+            <td><span id="TNT1KDR"></span></td>
+            <td><span id="TNT1CWS"></span></td>
+            <td><span id="TNT1BWS"></span></td>
+            <td><span id="TNT1DWS"></span></td>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">Sumo 1v1</span></th>
+            <td><span id="SUMO1W"></span></td>
+            <td><span id="SUMO1L"></span></td>
+            <td><span id="SUMO1WLR"></span></td>
+            <td><span id="SUMO1K"></span></td>
+            <td><span id="SUMO1D"></span></td>
+            <td><span id="SUMO1KDR"></span></td>
+            <td><span id="SUMO1CWS"></span></td>
+            <td><span id="SUMO1BWS"></span></td>
+            <td><span id="SUMO1DWS"></span></td>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">Bridge 1v1</span></th>
+            <td><span id="BRIDGE1W"></span></td>
+            <td><span id="BRIDGE1L"></span></td>
+            <td><span id="BRIDGE1WLR"></span></td>
+            <td><span id="BRIDGE1K"></span></td>
+            <td><span id="BRIDGE1D"></span></td>
+            <td><span id="BRIDGE1KDR"></span></td>
+            <td><span id="BRIDGE1CWS"></span></td>
+            <td><span id="BRIDGE1BWS"></span></td>
+            <td><span id="BRIDGE1DWS"></span></td>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">Bridge 2v2</span></th>
+            <td><span id="BRIDGE2W"></span></td>
+            <td><span id="BRIDGE2L"></span></td>
+            <td><span id="BRIDGE2WLR"></span></td>
+            <td><span id="BRIDGE2K"></span></td>
+            <td><span id="BRIDGE2D"></span></td>
+            <td><span id="BRIDGE2KDR"></span></td>
+            <td><span id="BRIDGE2CWS"></span></td>
+            <td><span id="BRIDGE2BWS"></span></td>
+            <td><span id="BRIDGE2DWS"></span></td>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">Bridge 3v3</span></th>
+            <td><span id="BRIDGE3W"></span></td>
+            <td><span id="BRIDGE3L"></span></td>
+            <td><span id="BRIDGE3WLR"></span></td>
+            <td><span id="BRIDGE3K"></span></td>
+            <td><span id="BRIDGE3D"></span></td>
+            <td><span id="BRIDGE3KDR"></span></td>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">Bridge 4v4</span></th>
+            <td><span id="BRIDGE4W"></span></td>
+            <td><span id="BRIDGE4L"></span></td>
+            <td><span id="BRIDGE4WLR"></span></td>
+            <td><span id="BRIDGE4K"></span></td>
+            <td><span id="BRIDGE4D"></span></td>
+            <td><span id="BRIDGE4KDR"></span></td>
+            <td><span id="BRIDGE4CWS"></span></td>
+            <td><span id="BRIDGE4BWS"></span></td>
+            <td><span id="BRIDGE4DWS"></span></td>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">Bridge 2v2v2v2</span></th>
+            <td><span id="BRIDGE2222W"></span></td>
+            <td><span id="BRIDGE2222L"></span></td>
+            <td><span id="BRIDGE2222WLR"></span></td>
+            <td><span id="BRIDGE2222K"></span></td>
+            <td><span id="BRIDGE2222D"></span></td>
+            <td><span id="BRIDGE2222KDR"></span></td>
+            <td><span id="BRIDGE2222CWS"></span></td>
+            <td><span id="BRIDGE2222BWS"></span></td>
+            <td><span id="BRIDGE2222DWS"></span></td>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">Bridge 3v3v3v3</span></th>
+            <td><span id="BRIDGE3333W"></span></td>
+            <td><span id="BRIDGE3333L"></span></td>
+            <td><span id="BRIDGE3333WLR"></span></td>
+            <td><span id="BRIDGE3333K"></span></td>
+            <td><span id="BRIDGE3333D"></span></td>
+            <td><span id="BRIDGE3333KDR"></span></td>
+            <td><span id="BRIDGE3333CWS"></span></td>
+            <td><span id="BRIDGE3333BWS"></span></td>
+            <td><span id="BRIDGE3333DWS"></span></td>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">Bridge CTF</span></th>
+            <td><span id="BRIDGECTFW"></span></td>
+            <td><span id="BRIDGECTFL"></span></td>
+            <td><span id="BRIDGECTFWLR"></span></td>
+            <td><span id="BRIDGECTFK"></span></td>
+            <td><span id="BRIDGECTFD"></span></td>
+            <td><span id="BRIDGECTFKDR"></span></td>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">Parkour</span></th>
+            <td><span id="PARKOURW"></span></td>
+            <td><span id="PARKOURL"></span></td>
+            <td><span id="PARKOURWLR"></span></td>
+            <td><span id="PARKOURK"></span></td>
+            <td><span id="PARKOURD"></span></td>
+            <td><span id="PARKOURKDR"></span></td>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">Boxing 1v1</span></th>
+            <td><span id="BOXINGW"></span></td>
+            <td><span id="BOXINGL"></span></td>
+            <td><span id="BOXINGWLR"></span></td>
+            <td><span id="BOXINGK"></span></td>
+            <td><span id="BOXINGD"></span></td>
+            <td><span id="BOXINGKDR"></span></td>
+          </tr>
+          <tr>
+            <td><span style="color:#FFFFFF">Duel Arena</span></th>
+            <td><span id="ARENAW"></span></td>
+            <td><span id="ARENAL"></span></td>
+            <td><span id="ARENAWLR"></span></td>
+            <td><span id="ARENAK"></span></td>
+            <td><span id="ARENAD"></span></td>
+            <td><span id="ARENAKDR"></span></td>
+          </tr>
+        </table>
+      </div>
+      <div id="PieChart" class="grid-item item8">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="PieChart.js"></script>
+      </div>
+    </div>
+  </body>
+</html>
